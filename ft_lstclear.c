@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 20:37:36 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 20:37:48 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:17 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:18 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	if (!*lst)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{
@@ -24,5 +24,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		ft_lstdelone(*lst, del);
 		*lst = tmp;
 	}
-	*lst = NULL;
 }

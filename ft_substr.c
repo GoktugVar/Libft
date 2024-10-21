@@ -5,12 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:22:30 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 19:33:19 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:18:01 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:18:02 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 19:41:08 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 19:55:53 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:54 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:55 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	i = -1;
 	str = ft_strdup(s);
-	if (!str || !s)
+	if (!str || !s || !f)
 		return (NULL);
 	while (s[++i])
 		str[i] = f(i, s[i]);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:29:06 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/08 13:38:46 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:58 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:59 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*i;
+	int	i;
 
-	while (s)
-		if (*s++ == c)
-			i = (char *)s--;
-	return (i);
+	if (!s)
+		return (NULL);
+	i = ft_strlen(s) + 1;
+	while (i-- > 0)
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+	return (NULL);
 }

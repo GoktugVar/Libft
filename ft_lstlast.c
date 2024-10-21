@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 20:41:53 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 20:41:55 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:22 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:23 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return (lst);
+		return (NULL);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

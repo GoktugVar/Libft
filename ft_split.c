@@ -5,18 +5,19 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 19:09:56 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 20:00:01 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:41 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:42 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static size_t	ft_word_count(char const *s, char c)
 {
 	size_t	count;
 
-	if (!*s)
+	if (!s)
 		return (0);
 	count = 0;
 	while (*s)
@@ -36,11 +37,8 @@ static size_t	ft_word_length(char const *s, char c)
 	size_t	len;
 
 	len = 0;
-	while (*s && *s != c)
-	{
+	while (*s != c && *(s++))
 		len++;
-		s++;
-	}
 	return (len);
 }
 

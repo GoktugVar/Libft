@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:28:59 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/09 12:01:14 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:51 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:52 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,15 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len;
 
+	if (!dst || !src)
+		return (0);
 	len = ft_strlen(src);
 	if (len + 1 < dstsize)
 		ft_memmove(dst, src, len + 1);
 	else if (dstsize != 0)
 	{
 		ft_memmove(dst, src, dstsize - 1);
-		dst[dstsize - 1] = 0;
+		dst[dstsize - 1] = '\0';
 	}
 	return (len);
 }

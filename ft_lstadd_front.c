@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 20:43:14 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 20:43:20 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:16 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:17 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,8 @@
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!new)
+	if (!lst || !new)
 		return ;
-	if (!lst)
-	{
-		*lst = new;
-		return ;
-	}
 	new->next = *lst;
 	*lst = new;
 }

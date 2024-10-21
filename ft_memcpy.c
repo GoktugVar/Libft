@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:28:40 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/11 03:35:53 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:31 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:32 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
 	char	*d;
 	char	*s;
 
-	d = dst;
+	if (!dst || !src)
+		return (NULL);
+	d = (char *)dst;
 	s = (char *)src;
 	while (n--)
 		*(d++) = *(s++);

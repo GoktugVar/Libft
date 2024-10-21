@@ -5,17 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:28:38 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/08 13:28:39 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:30 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:31 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
+	if (!s1 && !s2)
+		return (0);
+	if (!s1)
+		return (-*(unsigned char *)s2);
+	if (!s2)
+		return (*(unsigned char *)s1);
 	while (n--)
-		if ((s1++) != (s2++))
-			return ((--s1) - (--s2));
+		if (*(unsigned char *)(s1++) != *(unsigned char *)(s2++))
+			return (*(unsigned char *)(--s1) - *(unsigned char *)(--s2));
 	return (0);
 }

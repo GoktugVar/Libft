@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 15:22:33 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 18:24:48 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:59 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:18:00 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
 
-	if (!s1 || !set)
-		return (0);
+	if (!s1)
+		return (NULL);
+	if (!set)
+		return (ft_substr(s1, 0, ft_strlen(s1) + 1));
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	i = ft_strlen(s1);

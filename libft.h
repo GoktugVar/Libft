@@ -5,16 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:29:26 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/11 03:58:04 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:18:06 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:18:07 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdlib.h>
-# include <unistd.h>
+# include <stddef.h>
 
 typedef struct s_list
 {

@@ -5,19 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 20:16:40 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 20:17:57 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:47 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:48 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	int	i;
 
 	i = -1;
-	if (!s)
+	if (!s || !f)
 		return ;
 	while (s[++i])
 		f(i, &s[i]);

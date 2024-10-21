@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:28:45 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/11 03:56:33 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:34 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:35 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memset(void *b, int c, size_t len)
 {
 	char	*s;
 
-	s = b;
+	if (!b)
+		return (NULL);
+	s = (char *)b;
 	while (0 < len--)
-		s[len] = c;
+		s[len] = (char)c;
 	return (s);
 }

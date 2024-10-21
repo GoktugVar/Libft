@@ -5,19 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:29:01 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/10 21:23:34 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:52 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:53 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
-	while (s[i++])
-		;
+	while (s[i])
+		i++;
 	return (i);
 }

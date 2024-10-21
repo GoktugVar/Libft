@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 13:28:43 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/09 11:06:23 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:33 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:34 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stddef.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
@@ -19,8 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 
 	if (!dst || !src)
 		return (NULL);
-	d = dst;
-	s = src;
+	d = (char *)dst;
+	s = (const char *)src;
 	if (dst < src)
 		while (len--)
 			*(d++) = *(s++);

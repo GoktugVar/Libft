@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ivar <ivar@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/08 19:19:14 by ivar              #+#    #+#             */
-/*   Updated: 2024/10/11 03:19:27 by ivar             ###   ########.fr       */
+/*   Created: 2024/10/21 00:17:12 by ivar              #+#    #+#             */
+/*   Updated: 2024/10/21 00:17:13 by ivar             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-static int	ft_intlen(int n)
+static size_t	ft_intlen(int n)
 {
-	int	len;
+	size_t	len;
 
 	len = 1;
 	while (n > 9 || n < -9)
@@ -22,18 +22,19 @@ static int	ft_intlen(int n)
 		n /= 10;
 		len++;
 	}
+	if (n < 0)
+		len++;
 	return (len);
 }
 
-static char	*itoa_revwrite(char *dst, int n, int len)
+static char	*itoa_revwrite(char *dst, int n)
 {
 	while (n > 9)
 	{
-		dst[len - 1] = (n % 10) + '0';
+		*(dst--) = (n % 10) + '0';
 		n /= 10;
-		len--;
 	}
-	dst[len - 1] = n + '0';
+	*dst = n + '0';
 	return (dst);
 }
 
@@ -43,8 +44,6 @@ char	*ft_itoa(int n)
 	int		len;
 
 	len = ft_intlen(n);
-	if (n < 0)
-		len++;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (0);
@@ -58,7 +57,7 @@ char	*ft_itoa(int n)
 		n *= -1;
 		str[0] = '-';
 	}
-	itoa_revwrite(str, n, len);
+	itoa_revwrite(str + len - 1, n);
 	str[len] = '\0';
 	return (str);
 }
